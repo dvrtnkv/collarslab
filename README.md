@@ -1,34 +1,127 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Steps to reproduce build
 
-## Getting Started
+## Create next app with Typescript ESLint using npm.
 
-First, run the development server:
+```bash
+npx create-next-app@latest . --ts --eslint --use-npm
+```
+
+## Output
+
+```bash
+Creating a new Next.js app <directory>.
+
+Using npm.
+
+Installing dependencies:
+- react
+- react-dom
+- next
+- typescript
+- @types/react
+- @types/node
+- @types/react-dom
+- eslint
+- eslint-config-next
+
+added 237 packages, and audited 238 packages in 48s
+
+78 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+Initializing project with template: default
+
+Success! Created frontend at <directory>.
+```
+
+## Test Dev server
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Output
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+> frontend@0.1.0 dev
+> next dev
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+ready - started server on 0.0.0.0:3000, url: http://localhost:3000
+event - compiled client and server successfully in 3.8s (154 modules)
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Edit configuration package.json
 
-## Learn More
+```json
+"dependencies": {
+    "eslint": "8.27.0",
+    "eslint-config-next": "13.0.3",
+    "next": "13.0.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "typescript": "4.9.3"
+  },
+  "devDependencies": {
+    "@types/node": "18.11.9",
+    "@types/react": "18.0.25",
+    "@types/react-dom": "18.0.9"
+  }
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Opt-out telemetry
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npx next telemetry disable
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Output
 
-## Deploy on Vercel
+```bash
+Your preference has been saved to /home/<username>/.config/nextjs-nodejs/config.json.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Status: Disabled
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+You have opted-out of Next.js anonymous telemetry program.
+No data will be collected from your machine.
+Learn more: https://nextjs.org/telemetry
+```
+
+## Install Material UI & Font Roboto
+
+```bash
+npm install @mui/material @emotion/react @emotion/styled @fontsource/roboto
+```
+
+## Git install & config
+
+```bash
+sudo apt install git
+cd /home/<username>/app_directory
+git init
+git add .
+
+```
+
+## If Author identity unknown you need generate ssh key in your /home/<username>/.ssh/id_rsa.pub
+
+```bash
+ssh-keygen
+```
+
+After that you need add content of id_rsa.pub to your github account [settings/keys](https://github.com/settings/keys)
+
+## You can add your identity globals to this repository
+
+```bash
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+```
+## Add repository url
+
+```bash
+git remote add origin git@github.com:dvrtnkv/collarslab.git
+git branch -M main
+git commit -m "Init commit"
+git push -u origin main
