@@ -1,24 +1,27 @@
 import * as React from "react";
 import Link from "../Link";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Divider from "@mui/material/Divider";
-import Drawer from "@mui/material/Drawer";
-import IconButton from "@mui/material/IconButton";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
+import {
+  AppBar,
+  Box,
+  Divider,
+  Drawer,
+  IconButton,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  ListItemIcon,
+  Toolbar,
+  Typography,
+  Button,
+} from "@mui/material";
+
+import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import MenuIcon from "@mui/icons-material/Menu";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-
+import TextsmsIcon from "@mui/icons-material/Textsms";
 const drawerWidth = 240;
-const navItems = ["contact"];
 
-export default function Nav(props: Props) {
-  const { window } = props;
+export default function Nav() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -26,71 +29,61 @@ export default function Nav(props: Props) {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Link href="/" sx={{ my: 2 }}>
-        Collars Lab.
-      </Link>
-      <Divider />
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: "left" }}>
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton
-              sx={{ textAlign: "center" }}
-              component={Link}
-              href={`/${item}`}
-            >
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
-        ))}
+        <ListItem disablePadding>
+          <ListItemButton component={Link} href={`/`}>
+            <ListItemIcon>
+              <HomeRoundedIcon />
+            </ListItemIcon>
+            <ListItemText primary={"Collars Lab."} />
+          </ListItemButton>
+        </ListItem>
+        <Divider />
+        <ListItem disablePadding>
+          <ListItemButton component={Link} href={`/feed`}>
+            <ListItemIcon>
+              <TextsmsIcon />
+            </ListItemIcon>
+            <ListItemText primary={"Контакты"} />
+          </ListItemButton>
+        </ListItem>
       </List>
     </Box>
   );
 
-  const container =
-    window !== undefined ? () => window().document.body : undefined;
-
   return (
     <Box sx={{ display: "flex" }}>
       <AppBar component="nav">
-        <Toolbar>
+        <Toolbar sx={{ justifyContent: "space-between" }}>
           <IconButton
-            color="inherit"
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
+            sx={{ mr: 2, color: "#FFFFFF", display: { sm: "none" } }}
           >
             <MenuIcon />
           </IconButton>
-          <Link
-            variant="a"
+          <Typography
+            variant="h6"
+            component={Link}
             href="/"
             sx={{
-              flexGrow: 1,
               display: { xs: "none", sm: "block" },
               color: "#fff",
             }}
           >
             Collars Lab.
-          </Link>
+          </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {navItems.map((item) => (
-              <Button
-                key={item}
-                sx={{ color: "#fff" }}
-                component={Link}
-                href={item}
-              >
-                {item}
-              </Button>
-            ))}
+            <Button sx={{ color: "#fff" }} component={Link} href="/feed">
+              <TextsmsIcon sx={{ color: "#fff", mr: 1 }} />
+            </Button>
           </Box>
         </Toolbar>
       </AppBar>
       <Box component="nav">
         <Drawer
-          container={container}
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}

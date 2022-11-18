@@ -16,12 +16,12 @@ const Home = () => {
     <Layout title="Cайт под ключ" desc="Разработка сайта под ключ">
       <Box textAlign="center">
         <Typography variant="h3" gutterBottom>
-          Cайт под ключ бесплатно*
+          Сделаю сайт
         </Typography>
         <Button
           variant="contained"
           component={Link}
-          href="/contact"
+          href="/feed"
           disableElevation
           sx={{ color: "#FFFFFF" }}
         >
