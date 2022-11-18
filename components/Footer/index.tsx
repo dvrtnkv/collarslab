@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 
 export default function Footer() {
   return (
-    <Box textAlign="right" fontSize={12} >
+    <Box component="footer" textAlign="center" fontSize={12} padding={1}>
       &copy; collarslab on{" "}
       <Link
         href="https://github.com/dvrtnkv"

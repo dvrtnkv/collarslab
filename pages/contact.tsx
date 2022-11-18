@@ -15,7 +15,7 @@ export default function Form() {
       <Box
         component="form"
         sx={{
-          "& > :not(style)": { m: 1, width: "25ch" },
+          "& > :not(style)": { m: 1, width: "50ch" },
         }}
         noValidate
         autoComplete="off"
@@ -25,14 +25,14 @@ export default function Form() {
           id="standard-basic"
           label="Имя"
           variant="standard"
-          autofocus
+          autoFocus
         />
         <br />
         <TextField
           id="standard-multiline-flexible"
           label="Сообщение"
           multiline
-          maxRows={4}
+          maxRows={10}
           placeholder={value}
           onChange={handleChange}
           variant="standard"

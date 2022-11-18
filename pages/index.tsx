@@ -1,36 +1,100 @@
+import * as React from "react";
 import Layout from "../components/Layout";
 import Link from "../components/Link";
-import { useRouter } from "next/router";
+import {
+  Box,
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  Typography,
+  Grid,
+} from "@mui/material";
 
 const Home = () => {
-  const { asPath } = useRouter();
   return (
-    <Layout
-      title="Разработка сайта под ключ"
-      desc="Разработка сайта под ключ"
-      asPath={asPath}
-    >
-      <h1>Разработка сайта под ключ</h1>
-      <p>Бесплатно для первого клиента!</p>
-      <Link href="/contact">Заполнить анкету</Link>
-      <div>
-        <Link href="/server">
-          <h2>Разработка серверного кода &rarr;</h2>
-          <p>Nginx, Nodejs, Express, JWT.</p>
-        </Link>
-        <Link href="/client">
-          <h2>Клиентское приложение &rarr;</h2>
-          <p>Next.js, React, Material UI.</p>
-        </Link>
-        <Link href="https://collarslab.com/vcard">
-          <h2>Портфолио &rarr;</h2>
-          <p>Будь первым в моём портфолио</p>
-        </Link>
-        <Link href="https://collarslab.com/">
-          <h2>Весь путь от и до &rarr;</h2>
-          <p>Регистрация домена, аренда сервера &rarr; настройка UX.</p>
-        </Link>
-      </div>
+    <Layout title="Cайт под ключ" desc="Разработка сайта под ключ">
+      <Box textAlign="center">
+        <Typography variant="h3" gutterBottom>
+          Cайт под ключ бесплатно*
+        </Typography>
+        <Button
+          variant="contained"
+          component={Link}
+          href="/contact"
+          disableElevation
+          sx={{ color: "#FFFFFF" }}
+        >
+          Заказать
+        </Button>
+      </Box>
+      <Box
+        sx={{
+          my: 2,
+          display: "grid",
+          gap: 2,
+          gridTemplateColumns: { sm: "repeat(2, 1fr)" },
+        }}
+      >
+        <Card variant="outlined">
+          <CardContent sx={{ p: 2, "&:last-child": { pb: 0 } }}>
+            <Typography variant="h5" gutterBottom>
+              Backend
+            </Typography>
+            <Typography variant="body1">
+              Nginx, Nodejs, Express, JWT.
+            </Typography>
+            <Link href="/server">
+              <CardActions>
+                <Button size="small">Подробнее</Button>
+              </CardActions>
+            </Link>
+          </CardContent>
+        </Card>
+        <Card variant="outlined">
+          <CardContent sx={{ p: 2, "&:last-child": { pb: 0 } }}>
+            <Typography variant="h5" gutterBottom>
+              Frontend
+            </Typography>
+            <Typography variant="body1">
+              Next.js, React, Material UI.
+            </Typography>
+            <Link href="/client">
+              <CardActions>
+                <Button size="small">Подробнее</Button>
+              </CardActions>
+            </Link>
+          </CardContent>
+        </Card>
+        <Card variant="outlined">
+          <CardContent sx={{ p: 2, "&:last-child": { pb: 0 } }}>
+            <Typography variant="h5" gutterBottom>
+              Выполнено
+            </Typography>
+            <Typography variant="body1">Будь первым в списке!</Typography>
+            <Link href="https://collarslab.com/vcard">
+              <CardActions>
+                <Button size="small">Подробнее</Button>
+              </CardActions>
+            </Link>
+          </CardContent>
+        </Card>
+        <Card variant="outlined">
+          <CardContent sx={{ p: 2, "&:last-child": { pb: 0 } }}>
+            <Typography variant="h5" gutterBottom>
+              Сопровождение
+            </Typography>
+            <Typography variant="body1">
+              Регистрация домена, аренда сервера настройка UX.
+            </Typography>
+            <Link href="https://collarslab.com/">
+              <CardActions>
+                <Button size="small">Подробнее</Button>
+              </CardActions>
+            </Link>
+          </CardContent>
+        </Card>
+      </Box>
     </Layout>
   );
 };

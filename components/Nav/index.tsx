@@ -19,7 +19,6 @@ const navItems = ["contact"];
 
 export default function Nav(props: Props) {
   const { window } = props;
-  console.log(props);
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {

@@ -3,22 +3,28 @@ import Head from "next/head";
 import Link from "../Link";
 import Nav from "../Nav";
 import Footer from "../Footer";
-import { Box, Container, Grid } from "@mui/material";
+import { styled } from "@mui/material/styles";
+import { Box, Container, Grid, Paper } from "@mui/material";
 
 type Props = {
   children?: ReactNode;
   title?: string;
   desc?: string;
-  asPath?: string;
 };
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: "center",
+  color: theme.palette.text.secondary,
+}));
 
 const Layout = ({
   children,
   title = "Collars Lab.",
   desc = "Collars Lab. App",
-  asPath = "/",
 }: Props) => (
-  <Box sx={{ width: "100%" }}>
+  <Box sx={{ flexGrow: 1 }}>
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />
@@ -27,12 +33,21 @@ const Layout = ({
       <link rel="icon" href="/favicon.ico" />
     </Head>
 
-    <Grid container rowSpacing={0} columnSpacing={0}>
-      <Grid xs={12}>
-        <Nav asPath={asPath} />
+    <Grid
+      container
+      spacing={0}
+      direction="column"
+      alignItems="center"
+      justifyContent="center"
+      style={{ minHeight: "100vh" }}
+    >
+      <Grid item xs={12}>
+        <Nav />
       </Grid>
-      <Grid xs={8}>{children}</Grid>
-      <Grid xs={12}>
+      <Grid item xs={12} margin={2}>
+        {children}
+      </Grid>
+      <Grid item xs={12}>
         <Footer />
       </Grid>
     </Grid>

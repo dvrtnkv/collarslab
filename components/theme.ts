@@ -8,12 +8,11 @@ export const roboto = Roboto({
   display: 'swap',
   fallback: ['Helvetica', 'Arial', 'sans-serif'],
 });
-
-// Create a theme instance.
-const theme = createTheme({
+const lightTheme = createTheme({
   palette: {
-    primary: {
-      main: '#556cd6',
+    mode: "light",
+		primary: {
+      main: '#76bdff',
     },
     secondary: {
       main: '#19857b',
@@ -22,9 +21,34 @@ const theme = createTheme({
       main: red.A400,
     },
   },
+});
+// Create a theme instance.
+const darkTheme = createTheme({
+  palette: {
+		mode: "dark",
+		primary: {
+      main: '#232323',
+    },
+    secondary: {
+      main: '#ff9b2a',
+    },
+    error: {
+      main: red.A400,
+    },
+  }
+});
+
+const theme = createTheme({
+	lightTheme, darkTheme,
   typography: {
     fontFamily: roboto.style.fontFamily,
   },
-});
-
+	components: {
+    MuiUseMediaQuery: {
+      defaultProps: {
+        noSsr: true,
+      },
+    },
+  },
+})
 export default theme;
