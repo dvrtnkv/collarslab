@@ -18,15 +18,15 @@ const Home = () => {
         <Typography variant="h3" gutterBottom>
           Сделаю сайт
         </Typography>
-        <Button
-          variant="contained"
-          component={Link}
-          href="/feed"
-          disableElevation
-          sx={{ color: "#FFFFFF" }}
-        >
-          Заказать
-        </Button>
+        <Link href="/feed">
+          <Button
+            variant="contained"
+            disableElevation
+            sx={{ color: "#FFFFFF" }}
+          >
+            Заказать
+          </Button>
+        </Link>
       </Box>
       <Box
         sx={{
@@ -38,7 +38,7 @@ const Home = () => {
       >
         <Card variant="outlined">
           <CardContent sx={{ p: 2, "&:last-child": { pb: 0 } }}>
-            <Typography variant="h5" gutterBottom>
+            <Typography variant="h2" gutterBottom>
               Backend
             </Typography>
             <Typography variant="body1">
@@ -53,7 +53,7 @@ const Home = () => {
         </Card>
         <Card variant="outlined">
           <CardContent sx={{ p: 2, "&:last-child": { pb: 0 } }}>
-            <Typography variant="h5" gutterBottom>
+            <Typography variant="h2" gutterBottom>
               Frontend
             </Typography>
             <Typography variant="body1">
@@ -68,7 +68,7 @@ const Home = () => {
         </Card>
         <Card variant="outlined">
           <CardContent sx={{ p: 2, "&:last-child": { pb: 0 } }}>
-            <Typography variant="h5" gutterBottom>
+            <Typography variant="h2" gutterBottom>
               Выполнено
             </Typography>
             <Typography variant="body1">Будь первым в списке!</Typography>
@@ -81,7 +81,7 @@ const Home = () => {
         </Card>
         <Card variant="outlined">
           <CardContent sx={{ p: 2, "&:last-child": { pb: 0 } }}>
-            <Typography variant="h5" gutterBottom>
+            <Typography variant="h2" gutterBottom>
               Сопровождение
             </Typography>
             <Typography variant="body1">

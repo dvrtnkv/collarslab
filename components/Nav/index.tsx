@@ -65,20 +65,23 @@ export default function Nav() {
             <MenuIcon />
           </IconButton>
           <Typography
-            variant="h6"
             component={Link}
             href="/"
             sx={{
               display: { xs: "none", sm: "block" },
-              color: "#fff",
+              color: "#FFFFFF",
+              fontSize: 16,
             }}
           >
             Collars Lab.
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            <Button sx={{ color: "#fff" }} component={Link} href="/feed">
-              <TextsmsIcon sx={{ color: "#fff", mr: 1 }} />
-            </Button>
+            <Link href="/feed">
+              <Button sx={{ color: "#fff" }}>
+                <TextsmsIcon sx={{ color: "#fff", mr: 1 }} />
+                Обратная связь
+              </Button>
+            </Link>
           </Box>
         </Toolbar>
       </AppBar>
