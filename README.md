@@ -104,7 +104,7 @@ git add .
 
 ```
 
-## If Author identity unknown you need generate ssh key in your /home/<username>/.ssh/id_rsa.pub
+## If Author identity unknown you need generate ssh key in your /home/`username`/.ssh/id_rsa.pub
 
 ```bash
 ssh-keygen
@@ -125,3 +125,8 @@ git remote add origin git@github.com:dvrtnkv/collarslab.git
 git branch -M main
 git commit -m "Init commit"
 git push -u origin main
+```
+## Install
+```bash
+npm i -D @emotion/cache @emotion/server @next/font
+```
