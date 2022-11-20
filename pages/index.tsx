@@ -8,7 +8,7 @@ const Home = () => {
 		<Layout title='Cайт под ключ' desc='Разработка сайта под ключ'>
 			<Box textAlign='center'>
 				<Typography variant='h1' gutterBottom>
-					Сделаю сайт
+					Создам сайт
 				</Typography>
 				<Link href='/feed'>
 					<Button variant='contained' disableElevation sx={{ color: '#FFFFFF' }}>
@@ -25,55 +25,35 @@ const Home = () => {
 				}}
 			>
 				<Card variant='outlined'>
-					<CardContent sx={{ p: 2, '&:last-child': { pb: 0 } }}>
+					<CardContent p={2}>
 						<Typography variant='h2' gutterBottom>
 							Backend
 						</Typography>
-						<Typography variant='body1'>Nginx, Nodejs, Express, JWT.</Typography>
-						<Link href='/server'>
-							<CardActions>
-								<Button size='small'>Подробнее</Button>
-							</CardActions>
-						</Link>
+						<Typography variant='body1'>Nginx, Nodejs, Express, JWT</Typography>
 					</CardContent>
 				</Card>
 				<Card variant='outlined'>
-					<CardContent sx={{ p: 2, '&:last-child': { pb: 0 } }}>
+					<CardContent p={2}>
 						<Typography variant='h2' gutterBottom>
 							Frontend
 						</Typography>
-						<Typography variant='body1'>Next.js, React, Material UI.</Typography>
-						<Link href='/client'>
-							<CardActions>
-								<Button size='small'>Подробнее</Button>
-							</CardActions>
-						</Link>
+						<Typography variant='body1'>Next.js, React</Typography>
 					</CardContent>
 				</Card>
 				<Card variant='outlined'>
-					<CardContent sx={{ p: 2, '&:last-child': { pb: 0 } }}>
+					<CardContent p={2}>
 						<Typography variant='h2' gutterBottom>
 							Выполнено
 						</Typography>
 						<Typography variant='body1'>Будь первым в списке!</Typography>
-						<Link href='https://collarslab.com/vcard'>
-							<CardActions>
-								<Button size='small'>Подробнее</Button>
-							</CardActions>
-						</Link>
 					</CardContent>
 				</Card>
 				<Card variant='outlined'>
-					<CardContent sx={{ p: 2, '&:last-child': { pb: 0 } }}>
+					<CardContent p={2}>
 						<Typography variant='h2' gutterBottom>
-							Сопровождение
+							От А до Я
 						</Typography>
 						<Typography variant='body1'>Регистрация домена, аренда сервера настройка UX.</Typography>
-						<Link href='https://collarslab.com/'>
-							<CardActions>
-								<Button size='small'>Подробнее</Button>
-							</CardActions>
-						</Link>
 					</CardContent>
 				</Card>
 			</Box>
