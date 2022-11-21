@@ -16,9 +16,7 @@ const Home = () => {
   return (
     <Layout title="Cайт под ключ" desc="Разработка сайта под ключ">
       <Box textAlign="center">
-        <Typography variant="h1" gutterBottom>
-          Веб-разработка
-        </Typography>
+        <Typography variant="h1">Веб-разработка</Typography>
         <Box className={styles.landing_list}>
           <Link
             href="https://t.me/dvrtnkv"
@@ -77,37 +75,42 @@ const Home = () => {
       >
         <Card variant="outlined">
           <CardContent sx={{ p: 2 }}>
-            <Typography variant="h2" gutterBottom>
-              Backend
+            <Typography variant="h3" gutterBottom>
+              Визитка
             </Typography>
             <Typography variant="body1">
-              Nginx HTTP/3, Lets Encrypt Certificate, Nodejs, Express, JWT
+              Эффектная презентация компании с конверсией в приток клиентов
             </Typography>
           </CardContent>
         </Card>
         <Card variant="outlined">
           <CardContent sx={{ p: 2 }}>
-            <Typography variant="h2" gutterBottom>
-              Frontend
-            </Typography>
-            <Typography variant="body1">Next.js, React</Typography>
-          </CardContent>
-        </Card>
-        <Card variant="outlined">
-          <CardContent sx={{ p: 2 }}>
-            <Typography variant="h2" gutterBottom>
-              Выполнено
-            </Typography>
-            <Typography variant="body1">Будь первым в списке!</Typography>
-          </CardContent>
-        </Card>
-        <Card variant="outlined">
-          <CardContent sx={{ p: 2 }}>
-            <Typography variant="h2" gutterBottom>
-              От А до Я
+            <Typography variant="h3" gutterBottom>
+              Блог
             </Typography>
             <Typography variant="body1">
-              Регистрация домена, аренда сервера настройка UX.
+              Размещение цифрового контента
+            </Typography>
+          </CardContent>
+        </Card>
+        <Card variant="outlined">
+          <CardContent sx={{ p: 2 }}>
+            <Typography variant="h3" gutterBottom>
+              Интернет-магазин
+            </Typography>
+            <Typography variant="body1">
+              Товары и услуги с возможностью оплаты онлайн
+            </Typography>
+          </CardContent>
+        </Card>
+        <Card variant="outlined">
+          <CardContent sx={{ p: 2 }}>
+            <Typography variant="h3" gutterBottom>
+              Портал
+            </Typography>
+            <Typography variant="body1">
+              Работа с базой данных, персонализированные личные кабинеты с
+              уникальным наборов функций
             </Typography>
           </CardContent>
         </Card>
