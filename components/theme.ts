@@ -1,37 +1,28 @@
-import { Roboto } from '@next/font/google'
-import { createTheme, responsiveFontSizes } from '@mui/material/styles'
-import { red } from '@mui/material/colors'
+import { Roboto } from "@next/font/google";
+import { createTheme, responsiveFontSizes } from "@mui/material/styles";
+import { red } from "@mui/material/colors";
 
 export const roboto = Roboto({
-	weight: ['300', '400', '500', '700'],
-	subsets: ['latin'],
-	display: 'swap',
-	fallback: ['Helvetica', 'Arial', 'sans-serif']
-})
+  weight: ["300", "400", "500", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  fallback: ["Helvetica", "Arial", "sans-serif"]
+});
 
 const theme = createTheme({
-	palette: {
-		mode: 'light',
-		primary: {
-			main: '#1078db'
-		},
-		secondary: {
-			main: '#19857b'
-		},
-		error: {
-			main: red.A400
-		}
-	},
-	typography: {
-		fontFamily: roboto.style.fontFamily,
-		fontSize: 14
-	},
-	components: {
-		MuiUseMediaQuery: {
-			defaultProps: {
-				noSsr: true
-			}
-		}
-	}
-})
-export default responsiveFontSizes(theme)
+  palette: {
+    mode: "light"
+  },
+  typography: {
+    fontFamily: roboto.style.fontFamily,
+    fontSize: 14
+  },
+  components: {
+    MuiUseMediaQuery: {
+      defaultProps: {
+        noSsr: true
+      }
+    }
+  }
+});
+export default responsiveFontSizes(theme);

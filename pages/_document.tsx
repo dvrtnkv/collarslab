@@ -1,20 +1,25 @@
-import * as React from "react";
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import createEmotionServer from "@emotion/server/create-instance";
 import theme, { roboto } from "../components/theme";
 import createEmotionCache from "../components/createEmotionCache";
+// Next Strict Content Security Policy
+import { NextStrictCSP } from "next-strict-csp";
+// Enable Head Strict CSP in production mode only
+const HeadCSP = process.env.NODE_ENV === "production" ? NextStrictCSP : Head;
 
 export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="ru" className={roboto.className}>
-        <Head>
-          {/* PWA primary color */}
+        <HeadCSP>
+          {process.env.NODE_ENV === "production" && (
+            <meta httpEquiv="Content-Security-Policy" />
+          )}
           <meta name="theme-color" content={theme.palette.primary.main} />
           <link rel="shortcut icon" href="/favicon.ico" />
           <meta name="emotion-insertion-point" content="" />
           {(this.props as any).emotionStyleTags}
-        </Head>
+        </HeadCSP>
         <body>
           <Main />
           <NextScript />

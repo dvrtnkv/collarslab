@@ -1,17 +1,20 @@
 import Link from "../Link";
-import Box from "@mui/material/Box";
+import { Box, Divider } from "@mui/material";
 
 export default function Footer() {
+  const dateY = new Date().getFullYear();
   return (
-    <Box component="footer" textAlign="center" fontSize={12} padding={1}>
-      &copy; collarslab on{" "}
+    <>
+      <Divider />
+      &copy; collarslab.com, 2020
+      {2020 != dateY && " - " + dateY}{" | "}
       <Link
         href="https://github.com/dvrtnkv"
         target="_blank"
-        rel="noopener noreferrer"
+        rel="norefferer nofollow"
       >
-        github
+        Github
       </Link>
-    </Box>
+    </>
   );
 }

@@ -1,0 +1,28 @@
+.landing_list {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.5rem;
+}
+
+.landing_list a {
+	display: flex;
+	align-items: center;
+	padding: 8px;
+	border-radius: 8px;
+	margin-right: 8px;
+}
+
+.landing_list a:hover {
+	background-color: #dfdfdf;
+	color: #000000;
+}
+
+.landing_list a img {
+	border-radius: 16px;
+	margin-right: 8px;
+}
+
+.landing_list a:nth-last-child() {
+	margin-right: 0;
+}
